@@ -77,6 +77,8 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }*/
+    
+    /// load data form online api
   
     
     func loadData()
