@@ -1,0 +1,6 @@
+framework module Pods_testBranchNew {
+  umbrella header "Pods-testBranchNew-umbrella.h"
+
+  export *
+  module * { export * }
+}

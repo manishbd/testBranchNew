@@ -1,0 +1,115 @@
+PODS:
+  - AGEmojiKeyboard (0.2.1)
+  - Branch (0.25.3):
+    - Branch/Core (= 0.25.3)
+  - Branch/Core (0.25.3)
+  - Firebase/Core (5.7.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 5.1.1)
+  - Firebase/CoreOnly (5.7.0):
+    - FirebaseCore (= 5.1.2)
+  - Firebase/DynamicLinks (5.7.0):
+    - Firebase/Core
+    - FirebaseDynamicLinks (= 3.0.2)
+  - FirebaseAnalytics (5.1.1):
+    - FirebaseCore (~> 5.1)
+    - FirebaseInstanceID (~> 3.2)
+    - GoogleAppMeasurement (~> 5.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2.0)
+    - GoogleUtilities/MethodSwizzler (~> 5.2.0)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (5.1.2):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDynamicLinks (3.0.2):
+    - FirebaseAnalytics (~> 5.1)
+  - FirebaseInstanceID (3.2.1):
+    - FirebaseCore (~> 5.1)
+    - GoogleUtilities/Environment (~> 5.2)
+  - GoogleAnalytics (3.17.0)
+  - GoogleAppMeasurement (5.1.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2.0)
+    - GoogleUtilities/MethodSwizzler (~> 5.2.0)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (5.2.3):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (5.2.3)
+  - GoogleUtilities/Logger (5.2.3):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (5.2.3):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (5.2.3):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (5.2.3)"
+  - GoogleUtilities/Reachability (5.2.3):
+    - GoogleUtilities/Logger
+  - ISEmojiView (0.1.0)
+  - Ji (2.1.0):
+    - Ji/Ji (= 2.1.0)
+  - Ji/Ji (2.1.0):
+    - Ji/Ji-libxml
+  - Ji/Ji-libxml (2.1.0)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - ReadabilityKit (0.7.1):
+    - Ji
+  - SwiftLinkPreview (2.3.0)
+
+DEPENDENCIES:
+  - AGEmojiKeyboard
+  - Branch
+  - Firebase/Core
+  - Firebase/DynamicLinks
+  - GoogleAnalytics
+  - ISEmojiView
+  - ReadabilityKit
+  - SwiftLinkPreview
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AGEmojiKeyboard
+    - Branch
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseDynamicLinks
+    - FirebaseInstanceID
+    - GoogleAnalytics
+    - GoogleAppMeasurement
+    - GoogleUtilities
+    - ISEmojiView
+    - Ji
+    - nanopb
+    - ReadabilityKit
+    - SwiftLinkPreview
+
+SPEC CHECKSUMS:
+  AGEmojiKeyboard: d5a01a4b0de30e1f1c2a121503ac36a79c7217ab
+  Branch: 9917f91a5381bc88ed8e4f080a18213267cf44e6
+  Firebase: 734a4f92957aa6c40e7ae3fda3d9359e1890aa87
+  FirebaseAnalytics: 993577e91157feb40945abedd6ab346d8a4b6ac8
+  FirebaseCore: 3a97432acb324b439fbed338e642f9cbb516a63d
+  FirebaseDynamicLinks: eb41fb20677b0a6e944b47f45cbe59f388e9e5cc
+  FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  GoogleAppMeasurement: f7507b39b70ad0bd80b3d81518b2f43868974307
+  GoogleUtilities: 6f681e27050c5e130325e89fa0316dfca826f954
+  ISEmojiView: 848031d6ce724c38cabe00fdd43fb2da39cada89
+  Ji: 21946da4e13425485ddd424edfaeeced0d80ad28
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  ReadabilityKit: 45e79725f6d0377c555f38d9df7a6d4435898c04
+  SwiftLinkPreview: 6c9c37215a1310f2bb9ad74fdbe310b3e81556ac
+
+PODFILE CHECKSUM: 40ec2226a6a97df934f947cc9cb39abdf4fefc58
+
+COCOAPODS: 1.6.0.beta.1

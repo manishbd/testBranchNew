@@ -7,17 +7,51 @@
 //
 
 import UIKit
+import Branch
+import Firebase
+import FirebaseAnalytics
+import FirebaseDynamicLinks
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Branch.getInstance().setDebug()
+        // listener for Branch Deep Link data
+        Branch.getInstance().initSession(launchOptions: launchOptions) { (params, error) in
+            // do stuff with deep link data (nav to page, display content, etc)
+            print(params as? [String: AnyObject] ?? {})
+            if ((params as? [String: AnyObject])!["custom_data"]) != nil
+            {
+                let custom_data = ((params as? [String: AnyObject])!["custom_data"]) as! String
+                UserDefaults.standard.set(custom_data, forKey: "promocode")
+            }
+        }
+        
+        FirebaseApp.configure()
+        
+        let gai = GAI.sharedInstance()
+            //else {
+            //assert(false, "Google Analytics not configured correctly")
+        //}
+        gai?.tracker(withTrackingId: "UA-127590746-1")
+        // Optional: automatically report uncaught exceptions.
+        gai?.trackUncaughtExceptions = true
+        
+        // Optional: set Logger to VERBOSE for debug information.
+        // Remove before app release.
+        gai?.logger.logLevel = .verbose;
+        
         return true
     }
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -39,6 +73,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        Branch.getInstance().application(app, open: url, options: options)
+        print("--------------analytics url --\(url)")
+        UserDefaults.standard.set(url, forKey: "analyticsUrl")
+        return true
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        // handler for Universal Links
+        Branch.getInstance().continue(userActivity)
+        return true
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // handler for Push Notifications
+        Branch.getInstance().handlePushNotification(userInfo)
     }
 
 
